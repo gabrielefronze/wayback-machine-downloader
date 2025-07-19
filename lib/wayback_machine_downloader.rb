@@ -782,7 +782,7 @@ class WaybackMachineDownloader
     proxy_uri = URI.parse(params[:proxy_url])
     
     # Validate proxy URL format
-    unless ['http', 'https'].include?(proxy_uri.scheme)
+    unless ['http', 'https', 'socks5'].include?(proxy_uri.scheme)
       raise ArgumentError, "Proxy URL must use http or https scheme"
     end
     
